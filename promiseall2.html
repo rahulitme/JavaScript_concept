@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log(`first promise resolve`);
+        resolve(10);
+    }, 3 * 1000);
+});
+
+let p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log(`second promise resolve`);
+        resolve(20);
+    }, 3 * 1000);
+});
+
+let p3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log(`third promise resolve`);
+        resolve(30);
+    }, 3 * 100);
+});
+
+Promise.all([p1, p2, p3])
+    .then((result) => {
+        console.log(`result: ${result}`);
+    })
+    .catch((error) => {
+        console.log(`error: ${error}`);
+    });
+         
+           
+
+       
+
+
+
+
+    </script>
+    
+</body>
+</html>
