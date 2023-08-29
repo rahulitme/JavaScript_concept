@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Lab Program 03</title>
+ <style type="text/css">
+ body {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #f5f5f5;
+ }
+ header {
+ background-color: #007BFF;
+ color: white;
+ text-align: center;
+ padding: 1rem;
+ }
+ </style>
+<script type="text/javascript">
+ // Problem a
+ function generateFibonacciNumbers() {
+ var n = parseInt(prompt("Enter a number n:"));
+ var fibonacciSeries = [0, 1];
+ 
+ for (var i = 2; i < n; i++) {
+ fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+ }
+ 
+ alert("The first " + n + " Fibonacci numbers:\n" + fibonacciSeries.join(", "));
+ }
+ 
+
+// Problem b
+ function square()
+ {
+ let n = parseInt(prompt("Enter value for n: ")); 
+ let output = "Number Square\n"; 
+ for(i=1;i<=n;++i)
+ {
+ let sqr = i*i;
+ output += i +" "+sqr+"\n";
+ }
+ alert(output);
+ }
+ </script>
+</head>
+<body>
+ <header>
+ <h1 style="color: black">Lab Program 03</h1>
+ <h2>Department of Master of Computer Application</h2>
+ <h2 style="color: orange">Acharya Institute of Technology</h2>
+ </header>
+ <container>
+ <h4>Problem a: Generate Fibonacci Numbers</h4>
+ <button onclick="generateFibonacciNumbers()">button name</button>
+ <h4>Problem b: Generate Number and Squares Table</h4>
+ <button onclick="square()">Generate Number and Squares Table</button>
+ <button onclick="fs()">Click me</button>
+ </container>
+</body>
+</html>
+
+
+function fs()
+{
+ var n = parseInt(prompt("ENTHE RHE NUMBER"))
+ 
+    var fsc=[0,1]
+    for(var i=2;i<n;i++)
+    {
+        fsc[i] =  fsc[i-1] + fsc[i-2];
+
+    }
+    alert("hey many"+ n +fsc.joi());
+}
+<button "onclick=fs()">ky beta</button>
+
+//
+function somiya() {
+    let n = parseInt(prompt("Enter the number"));
+    let output = "Your output\n";
+    
+    for (let i = 0; i <= n; i++) {
+        let result = i + i;
+        output += i + " this is " + result + "\n";
+    }
+    
+    alert(output);
+}
+
+function somiya()
+{
+    let n=parseInt(prompt("enteh the number"));
+    let output = "rnaht output\n"
+    for(let i=0;i<=n;i++)
+    {
+        let sqr=i+i;
+       output = +i+"htis is" + sqr;
+    }
+    alert(output);
