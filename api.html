@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Example</title>
+    <style>
+        .user-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search User Information</h1>
+    <input type="text" id="searchInput" placeholder="Enter user ID">
+    <button id="searchButton">Search</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', searchUser);
+
+        function searchUser() {
+            const userId = document.getElementById('searchInput').value;
+            if (!userId) {
+                alert('Please enter a user ID');
+                return;
+            }
+
+            const apiUrl = `https://jsonplaceholder.typicode.com/users/${userId}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.id) {
+                        displayUserInfo(data);
+                    } else {
+                        document.getElementById('result').innerHTML = '<div class="user-box">User not found</div>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function displayUserInfo(user) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <div class="user-box">
+                    <h2>User Information</h2>
+                    <p>Name: ${user.name}</p>
+                    <p>Email: ${user.email}</p>
+                    <p>Phone: ${user.phone}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
